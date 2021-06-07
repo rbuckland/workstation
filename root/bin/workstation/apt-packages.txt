@@ -1,0 +1,63 @@
+# basics
+util-linux
+lsb-release
+
+# shells
+zsh
+locales
+fonts-powerline
+
+# tools
+man
+manpages-posix
+gzip
+zip
+unzip
+xz-utils
+curl
+tree
+tar
+rsync
+parallel
+gnupg
+vim
+tmux
+htop
+xsltproc
+libxml2-utils
+bash-completion
+pass
+file
+
+# doc type packages
+pandoc
+graphviz
+imagemagick
+
+# network tooling et al
+dnsutils
+nmap
+ipcalc
+netcat-openbsd
+net-tools
+inetutils-ping
+httping
+sshuttle
+arping
+ca-certificates
+iperf3
+iptraf
+iproute2
+openssh-server
+openssl
+ssh
+strace
+tcpdump
+traceroute
+wireshark
+
+# programming basics
+make
+build-essential
+checkinstall
+libssl-dev 
