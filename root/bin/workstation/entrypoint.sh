@@ -11,7 +11,6 @@ desired_shell=${WITH_SHELL:?Missing the desired WITH_SHELL}
 the_uid=${AS_UID:?Missing the AS_UID}
 the_gid=${AS_GID:?Missing the AS_GID}
 
-
 #
 # We do a once off setup if they are not configured, as a user in the container
 #
@@ -39,4 +38,4 @@ if ! id "${username}" &> /dev/null; then
 
 fi
 
-exec sudo --set-home --preserve-env --login --user=${username} /bin/${desired_shell}
+exec sudo --set-home --preserve-env --user=${username} /bin/${desired_shell}

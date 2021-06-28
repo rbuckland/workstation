@@ -1,11 +1,11 @@
 #!/bin/bash
 
-desired_version=${1:-*}
+desired_version=${1:-2.3-6ddac64}
 
 docker_image=$( docker images --format '{{ .Repository }}:{{ .Tag }}' \
-                              --filter "since=rbuckland/workstation" \
                               --filter=reference="rbuckland/workstation:${desired_version}" )
 image_version=$( echo ${docker_image} | cut -f2 -d: )                              
+
 
 container_hostname=ws-${image_version//\./-}
 relative_curdir=${PWD/$HOME/}
@@ -27,8 +27,8 @@ if [ -z $existing_container ]; then
         -p 8080:8080                                 \
         -e USERNAME=${USER}                          \
         -e OUTER_HOME=${HOME}                        \
-        -e AS_UID=${the_uid}                         \
-        -e AS_GID=${the_gid}                         \
+        -e AS_UID=${AS_UID:-$the_uid}                         \
+        -e AS_GID=${AS_GID:-$the_gid}                         \
         -e WITH_SHELL=${the_shell}                   \
         -v /var/run/docker.sock:/var/run/docker.sock \
         -v ${HOME}:/home/${USER}                     \

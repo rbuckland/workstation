@@ -28,6 +28,7 @@ libxml2-utils
 bash-completion
 pass
 file
+direnv
 
 # doc type packages
 pandoc
