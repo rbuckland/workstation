@@ -16,3 +16,8 @@ curl --fail --location --show-error --silent \
     -o /tmp/gh_cli.tgz https://github.com/cli/cli/releases/download/v${GH_CLI_VERSION}/gh_${GH_CLI_VERSION}_linux_amd64.tar.gz \
     && tar xvfz /tmp/gh_cli.tgz -C /usr/local/bin --strip-components=2 gh_${GH_CLI_VERSION}_linux_amd64/bin/gh \
     && rm -f /tmp/gh_cli.tgz
+
+cd /tmp && \
+    curl -LO https://github.com/bvieira/sv4git/releases/download/${GIT_SV_VERSION}/git-sv_${GIT_SV_VERSION}_linux_amd64.zip && \
+    unzip -d /usr/local/bin /tmp/git-sv_${GIT_SV_VERSION}_linux_amd64.zip && \
+    rm -rf /tmp/*

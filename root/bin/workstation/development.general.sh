@@ -15,3 +15,7 @@ chmod +x /usr/local/bin/jq
 #
 # starship zsh
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
+
+#
+# https://github.com/marionebl/svg-term-cli
+npm install -g svg-term-cli
