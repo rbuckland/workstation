@@ -18,4 +18,5 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 
 #
 # https://github.com/marionebl/svg-term-cli
+source /etc/profile.d/nvm_env.sh
 npm install -g svg-term-cli
