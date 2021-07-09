@@ -20,3 +20,8 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 # https://github.com/marionebl/svg-term-cli
 source /etc/profile.d/nvm_env.sh
 npm install -g svg-term-cli
+
+
+#
+# 
+# bash <(curl -fsSL https://raw.githubusercontent.com/snbuback/container-env/master/install.sh)
