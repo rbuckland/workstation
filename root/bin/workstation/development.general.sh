@@ -25,3 +25,11 @@ npm install -g svg-term-cli
 #
 # 
 # bash <(curl -fsSL https://raw.githubusercontent.com/snbuback/container-env/master/install.sh)
+
+#
+# Install jfrog CLI, which supports uploading artifacts with properties (meta tags etc)
+#
+wget -qO - https://releases.jfrog.io/artifactory/api/gpg/key/public | apt-key add - && \
+    echo "deb https://releases.jfrog.io/artifactory/jfrog-debs xenial contrib" | tee -a /etc/apt/sources.list && \
+    apt update && \
+    apt install -y jfrog-cli
