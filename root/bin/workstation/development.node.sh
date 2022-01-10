@@ -28,3 +28,4 @@ ln -s $NVM_DIR/nvm.sh /etc/profile.d/nvm.sh
 echo "export NODE_PATH=$NVM_DIR/versions/node/$DEFAULT_NODE_VERSION/lib/node_modules" > /etc/profile.d/nvm_env.sh
 echo "export PATH=$NVM_DIR/versions/node/$DEFAULT_NODE_VERSION/bin:\$PATH" >> /etc/profile.d/nvm_env.sh
 
+npm install -g $( cat /bin/workstation/packages.node.txt | egrep -v "(^#|^\s*$)" )

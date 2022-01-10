@@ -39,6 +39,7 @@ RUN /bin/workstation/development.git-etc.sh
 
 # node
 COPY root/bin/workstation/development.node.sh /bin/workstation/
+COPY root/bin/workstation/packages.node.txt /bin/workstation/
 RUN /bin/workstation/development.node.sh
 
 # docker

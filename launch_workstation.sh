@@ -1,6 +1,6 @@
 #!/bin/bash
 
-desired_version=${1:-2.3-6ddac64}
+desired_version=${1:-2.4-34a4dff}
 
 docker_image=$( docker images --format '{{ .Repository }}:{{ .Tag }}' \
                               --filter=reference="rbuckland/workstation:${desired_version}" )
