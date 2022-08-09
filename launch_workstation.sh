@@ -6,7 +6,6 @@ docker_image=$( docker images --format '{{ .Repository }}:{{ .Tag }}' \
                               --filter=reference="rbuckland/workstation:${desired_version}" )
 image_version=$( echo ${docker_image} | cut -f2 -d: )                              
 
-
 container_hostname=ws-${image_version//\./-}
 relative_curdir=${PWD/$HOME/}
 the_uid=$( id -u )
