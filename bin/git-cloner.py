@@ -9,6 +9,10 @@ Options:
 
 """
 
+# ~/.gitconfig
+# [alias]
+#   cloner = !~/bin/git-cloner
+
 import sys
 import os
 import docopt
