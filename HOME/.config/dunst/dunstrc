@@ -1,0 +1,9 @@
+[global]
+geometry = "300x200-10+50"
+title = Dunst
+class = Dunst
+transparency = 20
+corner_radius = 2
+font = "Monospace 7"
+history_length = 20
+word_wrap = true
