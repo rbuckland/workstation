@@ -47,9 +47,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# slack tweaks
+# Window floating controls
 for_window [class="Slack"] floating disable
 for_window [class="Slack" title="mini panel"] floating enable
+for_window [class="Pavucontrol"] floating enable
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -61,11 +62,11 @@ bindsym $mod+Return exec i3-sensible-terminal
 # lock screen
 bindsym Control+Mod1+l exec "i3lock -c 000000"
 
-bindsym $mod+p move workspace to output right
+bindsym $mod+Ctrl+greater move workspace to output next
 
 # change monitor layouts
-bindsym $mod+Control+r exec "autorandr --load r"
-bindsym $mod+Control+k exec "autorandr --load d" 
+bindsym $mod+F11 exec "autorandr --load r"
+bindsym $mod+F12 exec "autorandr --load k" 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -206,8 +207,18 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+# bar {
+#         mode dock
+#         status_command i3status
+# }
+
 bar {
         mode dock
-        status_command i3status
+	status_command ~/.local/bin/bumblebee-status \
+          -m cpu memory nic xrandr brightness caffeine docker_ps dunstctl battery pulsein pulseout datetime \
+          -p memory.format="{percent:05.02f}%" \
+             datetime.format="%a %d %b %y %H:%M:%S" \
+             pulseout.right-click="pavucontrol" \
+          -t iceberg-rainbow
 }
 bindsym Print exec flameshot gui
